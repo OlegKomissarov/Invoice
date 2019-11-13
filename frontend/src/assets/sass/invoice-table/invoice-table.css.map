@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,MAAM;EACJ,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,IAAI;;AAElB,qCAAqC;EAEnC,MAAM;IACJ,KAAK,EAAE,KAAK;AAEhB,oCAAoC;EAElC,MAAM;IACJ,KAAK,EAAE,IAAI;IACX,UAAU,EAAE,IAAI",
+"sources": ["invoice-table.sass"],
+"names": [],
+"file": "invoice-table.css"
+}

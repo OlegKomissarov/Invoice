@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACE,mBAAc;EACZ,KAAK,EAAE,IAAI;EACX,cAAc,EAAE,IAAI",
+"sources": ["link_disabled.sass"],
+"names": [],
+"file": "link_disabled.css"
+}

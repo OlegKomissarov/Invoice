@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,gCAAgC;EAC9B,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,WAAW,EAAE,UAAU;;AAEzB,qCAAqC;EAEnC,gCAAgC;IAC9B,KAAK,EAAE,KAAK;AAEhB,oCAAoC;EAElC,gCAAgC;IAC9B,KAAK,EAAE,IAAI",
+"sources": ["invoice-header-container-column.sass"],
+"names": [],
+"file": "invoice-header-container-column.css"
+}

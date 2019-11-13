@@ -1,0 +1,11 @@
+.new-doc {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 900px;
+  margin-bottom: 10px; }
+
+.new-doc .link {
+  color: cornflowerblue; }
+
+/*# sourceMappingURL=new-doc.css.map */

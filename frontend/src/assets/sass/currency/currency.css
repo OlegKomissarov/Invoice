@@ -1,0 +1,15 @@
+.currency {
+  display: flex;
+  align-items: center;
+  width: 450px;
+  margin-top: 25px;
+  justify-content: space-between; }
+
+@media screen and (max-width: 764px) {
+  .currency {
+    width: 75vw;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; } }
+
+/*# sourceMappingURL=currency.css.map */

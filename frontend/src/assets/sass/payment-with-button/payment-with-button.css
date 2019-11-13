@@ -1,0 +1,12 @@
+.payment-with-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 30px; }
+
+@media screen and (max-width: 764px) {
+  .payment-with-button {
+    margin-left: 10px;
+    width: 80vw; } }
+
+/*# sourceMappingURL=payment-with-button.css.map */

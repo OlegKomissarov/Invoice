@@ -1,0 +1,8 @@
+.profile-item__elem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 550px;
+  border: none; }
+
+/*# sourceMappingURL=profile-item__elem.css.map */

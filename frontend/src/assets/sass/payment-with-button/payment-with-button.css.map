@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,oBAAoB;EAClB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,IAAI;;AAEnB,oCAAoC;EAElC,oBAAoB;IAClB,WAAW,EAAE,IAAI;IACjB,KAAK,EAAE,IAAI",
+"sources": ["payment-with-button.sass"],
+"names": [],
+"file": "payment-with-button.css"
+}

@@ -1,0 +1,24 @@
+@import "./__date/invoice__date"
+@import "./__number/invoice__number"
+@import "./__header/invoice__header"
+
+.invoice
+  display: flex
+  flex-direction: column
+  align-items: center
+  background-color: white
+  width: 800px
+  padding: 75px 50px
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5)
+
+@media screen and (max-width: 1024px)
+
+  .invoice
+    width: 500px
+
+@media screen and (max-width: 764px)
+
+  .invoice
+    width: 75vw
+    padding: 45px 25px
+    font-size: 12px

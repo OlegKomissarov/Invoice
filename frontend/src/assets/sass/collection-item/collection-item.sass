@@ -1,0 +1,21 @@
+@import "__header/collection-item__header"
+@import "__sub-header/collection-item__sub-header"
+
+.collection-item
+  display: flex
+  justify-content: space-between
+  width: 90vw
+  padding: 10px
+  box-sizing: border-box
+  border-bottom: 1px solid #333
+  cursor: pointer
+  color: #333
+  text-decoration: none
+
+.collection-item:hover
+  background-color: #f5f5f5
+
+@media screen and (max-width: 1024px)
+  .collection-item
+    padding-left: 0
+    padding-right: 0

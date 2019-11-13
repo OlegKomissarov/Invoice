@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,gBAAgB;EACd,aAAa,EAAE,CAAC;;AAElB,qCAAqC;EACnC,gBAAgB;IACd,aAAa,EAAE,IAAI",
+"sources": ["payment_padding.sass"],
+"names": [],
+"file": "payment_padding.css"
+}

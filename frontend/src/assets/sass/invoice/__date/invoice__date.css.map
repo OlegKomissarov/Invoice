@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,cAAc;EACZ,KAAK,EAAE,KAAK;EACZ,WAAW,EAAE,IAAI;EACjB,UAAU,EAAE,KAAK",
+"sources": ["invoice__date.sass"],
+"names": [],
+"file": "invoice__date.css"
+}

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,wBAAwB;EACtB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM",
+"sources": ["navigation-buttons-left.sass"],
+"names": [],
+"file": "navigation-buttons-left.css"
+}

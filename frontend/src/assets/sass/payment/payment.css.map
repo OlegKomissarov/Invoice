@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,QAAQ;EACN,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,aAAa;EAC9B,KAAK,EAAE,KAAK;EACZ,aAAa,EAAE,cAAc;EAC7B,OAAO,EAAE,mBAAmB;;AAE9B,oCAAoC;EAElC,QAAQ;IACN,KAAK,EAAE,IAAI",
+"sources": ["payment.sass"],
+"names": [],
+"file": "payment.css"
+}

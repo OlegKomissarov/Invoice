@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,iCAAiC;EAC/B,WAAW,EAAE,IAAI",
+"sources": ["__select/collection-up-panel-left__select.sass"],
+"names": [],
+"file": "collection-up-panel-left.css"
+}

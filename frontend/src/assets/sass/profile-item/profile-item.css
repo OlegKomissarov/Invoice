@@ -1,0 +1,32 @@
+.profile-item__elem_field {
+  font-size: 18px;
+  padding: 0;
+  color: grey; }
+
+.profile-item__elem_field::-webkit-input-placeholder {
+  color: #ccc; }
+
+.profile-item__elem_field::-moz-placeholder {
+  color: #ccc; }
+
+.profile-item__elem_value {
+  padding: 5px 0;
+  font-size: 24px; }
+
+.profile-item__elem_value::-webkit-input-placeholder {
+  color: #ccc; }
+
+.profile-item__elem_value::-moz-placeholder {
+  color: #ccc; }
+
+.profile-item__elem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 550px;
+  border: none; }
+
+.profile-item {
+  margin-top: 15px; }
+
+/*# sourceMappingURL=profile-item.css.map */

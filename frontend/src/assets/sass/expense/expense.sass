@@ -1,0 +1,20 @@
+@import "__right/expense__right"
+@import "__elem/expense__elem"
+
+.expense
+  display: flex
+  justify-content: space-between
+  align-items: center
+  width: 750px
+  border-bottom: 1px solid #333
+  padding: 12px 0
+
+@media screen and (max-width: 1024px)
+
+  .expense
+    width: 450px
+
+@media screen and (max-width: 764px)
+
+  .expense
+    width: 70vw

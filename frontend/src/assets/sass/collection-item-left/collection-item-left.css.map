@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,qBAAqB;EACnB,OAAO,EAAE,IAAI;EACb,KAAK,EAAE,KAAK;EACZ,eAAe,EAAE,aAAa",
+"sources": ["collection-item-left.sass"],
+"names": [],
+"file": "collection-item-left.css"
+}

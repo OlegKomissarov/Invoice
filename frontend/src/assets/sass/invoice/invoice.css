@@ -1,0 +1,122 @@
+.invoice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: 800px;
+  padding: 75px 50px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); }
+
+.new-doc {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 900px;
+  margin-bottom: 10px; }
+
+.new-doc .link {
+  color: cornflowerblue; }
+
+.invoice__header-container-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 750px; }
+
+.invoice__header-container-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
+
+.invoice__header-container-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.header-input {
+  border: none;
+  padding: 0;
+  height: 1em; }
+
+.invoice__header {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 10px; }
+
+.invoice__number, .invoice__date {
+  width: 100px;
+  margin-left: 10px; }
+
+.invoice__date {
+  text-align: right; }
+
+.table {
+  width: 750px;
+  margin-top: 50px; }
+
+.table-block-with-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 780px; }
+
+.table-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 750px;
+  border-bottom: 1px solid #333;
+  padding: 12px 0; }
+
+.table-block__right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px; }
+
+.table-block__elem {
+  width: 100px;
+  border: none;
+  padding: 0;
+  overflow: hidden; }
+
+.count-input, .price-input {
+  margin-left: 15px; }
+
+.table-block__right .table-block__elem {
+  text-align: right; }
+
+.remove-button-container {
+  opacity: 0.2;
+  cursor: pointer;
+  margin-left: 15px; }
+
+.remove-button-container:hover {
+  opacity: 1; }
+
+.under-table-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 750px;
+  padding: 12px 0; }
+
+.send-button-container {
+  display: flex;
+  align-items: center;
+  width: 750px;
+  justify-content: flex-end; }
+
+.send-button-container__send-button {
+  font-size: 20px;
+  padding: 10px 20px;
+  color: #333;
+  background-color: aliceblue;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); }
+
+.send-button-container__send-button:active {
+  box-shadow: -1px -1px 3px rgba(0, 0, 0, 0.5); }
+
+/*# sourceMappingURL=invoice.css.map */

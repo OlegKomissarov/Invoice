@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,mBAAmB;EACjB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM;EACnB,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,IAAI",
+"sources": ["profile-item__elem.sass"],
+"names": [],
+"file": "profile-item__elem.css"
+}

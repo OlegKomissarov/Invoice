@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,QAAQ;EACN,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,QAAQ;EACzB,KAAK,EAAE,KAAK;EACZ,aAAa,EAAE,IAAI;;AAErB,cAAc;EACZ,KAAK,EAAE,cAAc",
+"sources": ["new-doc.sass"],
+"names": [],
+"file": "new-doc.css"
+}

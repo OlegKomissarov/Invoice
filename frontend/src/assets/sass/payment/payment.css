@@ -1,0 +1,13 @@
+.payment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 450px;
+  border-bottom: 1px solid #333;
+  padding: 12px 12px 12px 12px; }
+
+@media screen and (max-width: 764px) {
+  .payment {
+    width: 75vw; } }
+
+/*# sourceMappingURL=payment.css.map */

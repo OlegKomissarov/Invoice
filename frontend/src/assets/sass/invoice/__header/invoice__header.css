@@ -1,0 +1,10 @@
+.invoice__header {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 10px; }
+
+@media screen and (max-width: 764px) {
+  .invoice__header {
+    font-size: 20px; } }
+
+/*# sourceMappingURL=invoice__header.css.map */

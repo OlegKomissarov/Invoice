@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,sCAAsC;EACpC,UAAU,EAAE,QAAQ;;AAEtB,WAAW;EACT,OAAO,EAAE,CAAC;;AAEZ,cAAc;EACZ,OAAO,EAAE,CAAC;EACV,SAAS,EAAE,sBAAsB",
+"sources": ["page-animation.sass"],
+"names": [],
+"file": "page-animation.css"
+}

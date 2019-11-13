@@ -1,0 +1,13 @@
+.invoice-header-container-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
+
+@media screen and (max-width: 1024px) {
+  .invoice-header-container-column {
+    width: 250px; } }
+@media screen and (max-width: 764px) {
+  .invoice-header-container-column {
+    width: 70vw; } }
+
+/*# sourceMappingURL=invoice-header-container-column.css.map */

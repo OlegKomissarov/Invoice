@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,gBAAgB;EACd,KAAK,EAAE,KAAK;EACZ,WAAW,EAAE,IAAI",
+"sources": ["invoice__number.sass"],
+"names": [],
+"file": "invoice__number.css"
+}

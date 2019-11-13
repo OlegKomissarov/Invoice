@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,oBAAoB;EAClB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,KAAK,EAAE,KAAK;EACZ,eAAe,EAAE,UAAU;EAC3B,UAAU,EAAE,IAAI;;AAElB,oCAAoC;EAElC,oBAAoB;IAClB,KAAK,EAAE,IAAI",
+"sources": ["payment-under-table.sass"],
+"names": [],
+"file": "payment-under-table.css"
+}

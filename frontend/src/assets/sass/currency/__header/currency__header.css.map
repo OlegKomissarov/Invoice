@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,oCAAoC;EAElC,iBAAiB;IACf,aAAa,EAAE,IAAI",
+"sources": ["currency__header.sass"],
+"names": [],
+"file": "currency__header.css"
+}

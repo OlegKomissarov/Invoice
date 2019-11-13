@@ -1,0 +1,12 @@
+.payment-under-table {
+  display: flex;
+  align-items: center;
+  width: 450px;
+  justify-content: flex-start;
+  margin-top: 10px; }
+
+@media screen and (max-width: 764px) {
+  .payment-under-table {
+    width: 75vw; } }
+
+/*# sourceMappingURL=payment-under-table.css.map */

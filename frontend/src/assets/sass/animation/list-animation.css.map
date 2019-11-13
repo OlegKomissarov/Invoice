@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,sCAAsC;EACpC,UAAU,EAAE,QAAQ;;AAEtB,WAAW;EACT,OAAO,EAAE,CAAC;EACV,SAAS,EAAE,iBAAiB;;AAE9B,cAAc;EACZ,OAAO,EAAE,CAAC;EACV,SAAS,EAAE,iBAAiB",
+"sources": ["list-animation.sass"],
+"names": [],
+"file": "list-animation.css"
+}

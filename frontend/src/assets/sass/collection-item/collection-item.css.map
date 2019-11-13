@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,wBAAwB;EACtB,WAAW,EAAE,IAAI;EACjB,KAAK,EAAE,KAAK;;ACFd,4BAA4B;EAC1B,KAAK,EAAE,KAAK;;ACEd,gBAAgB;EACd,OAAO,EAAE,IAAI;EACb,KAAK,EAAE,KAAK;EACZ,eAAe,EAAE,aAAa;EAC9B,OAAO,EAAE,iBAAiB;EAC1B,UAAU,EAAE,UAAU;EACtB,aAAa,EAAE,cAAc;EAC7B,MAAM,EAAE,OAAO;EACf,KAAK,EAAE,IAAI;EACX,eAAe,EAAE,IAAI;;AAEvB,sBAAsB;EACpB,gBAAgB,EAAE,OAAO",
+"sources": ["__header/collection-item__header.sass","__sub-header/collection-item__sub-header.sass","collection-item.sass"],
+"names": [],
+"file": "collection-item.css"
+}

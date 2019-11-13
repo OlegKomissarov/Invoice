@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,4BAA4B;EAC1B,KAAK,EAAE,KAAK",
+"sources": ["collection-item__sub-header.sass"],
+"names": [],
+"file": "collection-item__sub-header.css"
+}

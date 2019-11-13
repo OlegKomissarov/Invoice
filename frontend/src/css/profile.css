@@ -1,0 +1,147 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(http://themes.googleusercontent.com/static/fonts/opensans/v6/DXI1ORHCpsQm3Vp6mXoaTZ1r3JsPcQLi8jytr04NNhU.woff) format('woff');
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans';
+    color: #333;
+}
+select{
+    font-family: 'Open Sans';
+}
+a{
+    color: #333;
+    text-decoration: none;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+.navigation-buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    margin-top: 25px;
+}
+.navigation-buttons__left-block{
+    display: flex;
+    align-items: center;
+}
+.navigation-buttons__right-block{
+    display: flex;
+    align-items: center;;
+}
+.navigation-buttons__select{
+    margin-right: 25px;
+}
+.navigation-buttons__link{
+    margin-right: 25px;
+}
+.navigation-buttons__profile-link{
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    background-color: aliceblue;
+}
+.navigation-buttons__link:hover{
+    text-decoration: underline;
+}
+.navigation-buttons__select, .document-setting-buttons__currency-section{
+    padding: 5px 10px 5px 10px;
+    background-color: white;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+    .navigation-buttons {
+        display: none;
+    }
+}
+
+.profile{
+    margin-top: 100px;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+}
+.profile__line{
+    width: 60vw;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+.profile__data-name{
+    width: 10vw;
+    color: gray;
+}
+.profile__data{
+    width: 40vw;
+}
+.profile input{
+    cursor: pointer;
+}
+.email-note{
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.profile__add-button-container{
+    width: 80vw;
+}
+.profile__add-button{
+    cursor: pointer;
+    color: cornflowerblue;
+}
+
+@media screen and (max-width: 1024px) {
+    .profile__line{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .profile__data{
+        margin-top: 4px;
+    }
+    .email-note{
+        margin-top: 4px;
+    }
+}
+@media screen and (max-width: 500px) {
+    body{
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

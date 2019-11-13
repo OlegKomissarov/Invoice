@@ -1,0 +1,11 @@
+.profile-item__elem_value {
+  padding: 5px 0;
+  font-size: 24px; }
+
+.profile-item__elem_value::-webkit-input-placeholder {
+  color: #ccc; }
+
+.profile-item__elem_value::-moz-placeholder {
+  color: #ccc; }
+
+/*# sourceMappingURL=profile-item__elem_value.css.map */
