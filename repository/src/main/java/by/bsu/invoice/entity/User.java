@@ -35,8 +35,14 @@ public class User {
     @Column(name = "phone", nullable = false, length = 17)
     private String phone;
 
-    public User(final long newId, final String newEmail, final String newName, final String newPhone) {
+    public User(long newId, String newEmail, String newName, String newPhone) {
         this.id = newId;
+        this.email = newEmail;
+        this.name = newName;
+        this.phone = newPhone;
+    }
+
+    public User(String newEmail, String newName, String newPhone) {
         this.email = newEmail;
         this.name = newName;
         this.phone = newPhone;

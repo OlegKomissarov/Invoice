@@ -7,15 +7,17 @@ import java.util.List;
 
 public interface UserRepository extends Repository<User> {
 
-    User getByEmail(final String email);
+    User getByEmail(String email);
 
-    BigDecimal getBalance(final long userId);
+    long getIdByEmail(String email);
 
-    BigDecimal updateBalance(final BigDecimal currentBalance, final BigDecimal moneyAmount, final long userId);
+    BigDecimal getBalance(long userId);
 
-    BigDecimal getInvoiceSummary(final long customerId);
+    BigDecimal updateBalance(BigDecimal currentBalance, BigDecimal moneyAmount, long userId);
 
-    BigDecimal getPaymentSummary(final long customerId);
+    BigDecimal getInvoiceSummary(long customerId);
 
-    List<User> getByQuery(final String searchQuery);
+    BigDecimal getPaymentSummary(long customerId);
+
+    List<User> getBySearchQuery(String searchQuery);
 }

@@ -1,19 +1,18 @@
 package by.bsu.invoice.repository;
 
 import by.bsu.invoice.entity.Invoice;
-import by.bsu.invoice.entity.User;
 
 import java.util.List;
 
 public interface InvoiceRepository extends Repository<Invoice> {
 
-    List<Invoice> getBySellerId(final long sellerId);
+    List<Invoice> getByUserId(long sellerId);
 
-    long[] getSellerAndCustomerId(final long id);
+    long[] getSellerAndCustomerId(long id);
 
-    void delete(final long id, final boolean isSeller);
+    void delete(long id);
 
-    void approve(final long id);
+    void approve(long id);
 
-    List<User> getByQuery(final String searchQuery);
+//    List<Invoice> getByTitleAndUserId(String title, long userId);
 }

@@ -16,22 +16,22 @@ public abstract class AbstractRepository<T> implements Repository<T> {
     protected EntityManager entityManager;
 
     @Override
-    public void save(final T model) {
+    public void save(T model) {
         entityManager.persist(model);
     }
 
     @Override
-    public void update(final T model) {
+    public void update(T model) {
         entityManager.merge(model);
     }
 
     @Override
-    public void remove(final Integer id) {
+    public void remove(long id) {
         entityManager.remove(getById(id));
     }
 
     @Override
-    public T getById(Integer id) {
+    public T getById(long id) {
         return entityManager.find(clazz, id);
     }
 }

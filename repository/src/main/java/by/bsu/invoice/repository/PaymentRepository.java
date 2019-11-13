@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface PaymentRepository extends Repository<Payment> {
 
-    List<Payment> getByInvoiceId(final long invoiceId);
+    List<Payment> getByInvoiceId(long invoiceId);
 }

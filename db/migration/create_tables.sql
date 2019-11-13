@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS invoice.user
 );
 ALTER SEQUENCE invoice.user_id_seq RESTART WITH 1;
 
-CREATE TABLE IF NOT EXISTS invoice.service
+CREATE TABLE IF NOT EXISTS invoice.product
 (
     id              SERIAL PRIMARY KEY,
     title           character   varying(100)            NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS invoice.service
     seller_id       int references invoice.user (id)    NOT NULL,
     is_archival     smallint                            NOT NULL DEFAULT 0
 );
-ALTER SEQUENCE invoice.service_id_seq RESTART WITH 1;
+ALTER SEQUENCE invoice.product_id_seq RESTART WITH 1;
 
 CREATE TABLE IF NOT EXISTS invoice.invoice
 (
@@ -29,8 +29,7 @@ CREATE TABLE IF NOT EXISTS invoice.invoice
     payment_deadline    date                            NOT NULL,
     seller_id       int references invoice.user (id)    NOT NULL,
     customer_id     int references invoice.user (id)    NOT NULL,
-    is_archival_for_customer smallint                   NOT NULL DEFAULT 0,
-    is_archival_for_seller   smallint                   NOT NULL DEFAULT 0,
+    is_archival     smallint                            NOT NULL DEFAULT 0,
     is_approved     smallint                            NOT NULL DEFAULT 0
 );
 ALTER SEQUENCE invoice.invoice_id_seq RESTART WITH 1;
@@ -48,7 +47,7 @@ CREATE TABLE IF NOT EXISTS invoice.expense
 (
     id              SERIAL PRIMARY KEY,
     invoice_id      int references invoice.invoice (id) NOT NULL,
-    service_id      int references invoice.service (id) NOT NULL,
+    product_id      int references invoice.product (id) NOT NULL,
     amount          int                                 NOT NULL
 );
 ALTER SEQUENCE invoice.expense_id_seq RESTART WITH 1;

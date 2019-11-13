@@ -12,9 +12,9 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "service", schema = "invoice")
-@SequenceGenerator(name = "service_id_seq")
-public class Service {
+@Table(name = "product", schema = "invoice")
+@SequenceGenerator(name = "product_id_seq")
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -36,13 +36,14 @@ public class Service {
     @Column(name = "is_archival", nullable = false)
     private boolean isArchival;
 
-    public Service(final long newId, final String newTitle,
-                   final String newDescription, final BigDecimal newPrice,
-                   final long newSellerId) {
-        this.id = newId;
+    public Product(String newTitle, String newDescription, BigDecimal newPrice, long newSellerId) {
         this.title = newTitle;
         this.description = newDescription;
         this.price = newPrice;
         this.sellerId = newSellerId;
+    }
+
+    public Product(long newId) {
+        this.id = newId;
     }
 }

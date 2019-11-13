@@ -10,7 +10,7 @@ public interface Repository<T> {
 
     void update(T model);
 
-    void remove(Integer id);
+    void remove(long id);
 
-    T getById(Integer id);
+    T getById(long id);
 }
