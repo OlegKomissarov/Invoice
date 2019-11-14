@@ -2,6 +2,10 @@ package by.bsu.invoice.service;
 
 import by.bsu.invoice.entity.Expense;
 
+import java.util.List;
+
 public interface ExpenseService extends Service<Expense> {
-    void create(long invoiceId, long productId, long productAmount);
+    void create(Integer invoiceId);
+
+    List<Expense> getByInvoiceId(Integer invoiceId);
 }

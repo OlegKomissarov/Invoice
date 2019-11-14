@@ -3,8 +3,6 @@ package by.bsu.invoice.service;
 
 import by.bsu.invoice.repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
 
 import java.util.List;
 
@@ -19,23 +17,12 @@ public abstract class AbstractService<T, R extends Repository<T>> implements Ser
     }
 
     @Override
-    public List<T> read() {
-        return (List<T>) repository.getAll();
+    public List<T> getAll() {
+        return (List<T>) repository.findAll();
     }
 
     @Override
-    public void remove(long id) {
-        repository.remove(id);
+    public T getById(Integer id) {
+        return repository.findById(id).get();
     }
-
-    @Override
-    public T getById(long id) {
-        return repository.getById(id);
-    }
-
-    // TODO: add pagination
-//    @Override
-//    public List<T> paginate(int pageId, int total)  {
-//        return repository.getAll(PageRequest.of(pageId - 1, total, Sort.by("id"))).getContent();
-//    }
 }

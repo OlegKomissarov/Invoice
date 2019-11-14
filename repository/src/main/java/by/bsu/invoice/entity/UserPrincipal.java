@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.List;
 
 public class UserPrincipal implements UserDetails {
-    private long id;
+    private Integer id;
     private String username;
     private String password;
     private List<GrantedAuthority> authorities;
@@ -20,7 +20,7 @@ public class UserPrincipal implements UserDetails {
         authorities = AuthorityUtils.commaSeparatedStringToAuthorityList("Member");
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 

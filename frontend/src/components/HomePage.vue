@@ -57,8 +57,8 @@
                 this.isLoaded = false;
                 InvoiceApi.show(this.invoiceId, this.config)
                     .then(response => {
-                        this.$store.commit('setInvoice', hardcodedInvoices[0]);
-                        // this.$store.commit('setInvoice', response.data.data);
+                        // this.$store.commit('setInvoice', hardcodedInvoices[0]);
+                        this.$store.commit('setInvoice', response.data.data);
                         this.isLoaded = true;
                     })
                     .catch(err => {

@@ -4,12 +4,7 @@ import java.util.List;
 
 public interface Service<T> {
 
-    List<T> read();
+    List<T> getAll();
 
-    void remove(long id);
-
-    T getById(long id);
-
-//    List<T> paginate(int pageId, int total);
-
+    T getById(Integer id);
 }

@@ -1,18 +1,18 @@
 package by.bsu.invoice.repository;
 
 import by.bsu.invoice.entity.Invoice;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
+@org.springframework.stereotype.Repository
 public interface InvoiceRepository extends Repository<Invoice> {
 
-    List<Invoice> getByUserId(long sellerId);
+    @Modifying
+    @Query(value = "UPDATE invoice.invoice SET is_archival=1 WHERE id=?", nativeQuery = true)
+    void delete(Integer id);
 
-    long[] getSellerAndCustomerId(long id);
-
-    void delete(long id);
-
-    void approve(long id);
-
-//    List<Invoice> getByTitleAndUserId(String title, long userId);
+    @Query(value = "SELECT * from invoice.invoice where user_id=?", nativeQuery = true)
+    List<Invoice> getByUserId(Integer userId);
 }

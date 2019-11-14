@@ -1,16 +1,8 @@
 package by.bsu.invoice.repository;
 
-import java.util.List;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.NoRepositoryBean;
 
-public interface Repository<T> {
-
-    List<T> getAll();
-
-    void save(T model);
-
-    void update(T model);
-
-    void remove(long id);
-
-    T getById(long id);
+@NoRepositoryBean
+public interface Repository<T> extends CrudRepository<T, Integer> {
 }

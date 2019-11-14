@@ -23,7 +23,7 @@ public class UserServiceImpl extends AbstractService<User, UserRepository> imple
         this.passwordEncoder = passwordEncoder;
     }
 
-    public long getIdByEmail(String email) {
+    public Integer getIdByEmail(String email) {
         return repository.getIdByEmail(email);
     }
 
@@ -36,7 +36,7 @@ public class UserServiceImpl extends AbstractService<User, UserRepository> imple
     }
 
     public void update (String email, String name, String phone) {
-        repository.update(new User(email, name, phone));
+        repository.save(new User(email, name, phone));
     }
 
     public void create (String email, String password, String name, String phone) {

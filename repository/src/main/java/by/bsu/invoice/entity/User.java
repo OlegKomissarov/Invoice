@@ -12,13 +12,13 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "payment", schema = "invoice")
-@SequenceGenerator(name = "payment_id_seq")
+@Table(name = "user", schema = "invoice")
+@SequenceGenerator(name = "user_id_seq")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Integer id;
 
     @Column(name = "email", nullable = false, length = 224)
     private String email;
@@ -29,22 +29,19 @@ public class User {
     @Column(name = "current_balance", nullable = false)
     private BigDecimal currentBalance;
 
-    @Column(name = "name", nullable = false, length = 100)
-    private String name;
+    @Column(name = "username", nullable = false, length = 100)
+    private String username;
 
     @Column(name = "phone", nullable = false, length = 17)
     private String phone;
 
-    public User(long newId, String newEmail, String newName, String newPhone) {
-        this.id = newId;
-        this.email = newEmail;
-        this.name = newName;
-        this.phone = newPhone;
+    public User(Integer id) {
+        this.id = id;
     }
 
-    public User(String newEmail, String newName, String newPhone) {
-        this.email = newEmail;
-        this.name = newName;
-        this.phone = newPhone;
+    public User(String email, String name, String phone) {
+        this.email = email;
+        this.username = name;
+        this.phone = phone;
     }
 }

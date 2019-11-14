@@ -45,7 +45,7 @@
             }),
             config () {
                 return {
-                    headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken'), SecFetchSite: 'none' }
+                    // headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken'), SecFetchSite: 'none' }
                 };
             }
         },
@@ -62,8 +62,8 @@
             fetchData () {
                 InvoiceApi.showAll(this.config)
                     .then(response => {
-                        this.$store.commit('setInvoiceList', hardcodedInvoices);
-                        // this.$store.commit('setInvoiceList', response.data.data);
+                        // this.$store.commit('setInvoiceList', hardcodedInvoices);
+                        this.$store.commit('setInvoiceList', response.data);
                         this.isLoaded = true;
                     })
                     .catch(err => {

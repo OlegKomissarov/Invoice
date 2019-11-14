@@ -17,9 +17,10 @@ public class SessionUser {
         this.userService = userService;
     }
 
-    public long getId() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
-        return userPrincipal.getId();
+    public Integer getId() {
+        return 11;
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
+//        return userPrincipal.getId();
     }
 }

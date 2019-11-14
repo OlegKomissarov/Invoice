@@ -16,9 +16,17 @@ import java.sql.Date;
 @Table(name = "payment", schema = "invoice")
 @SequenceGenerator(name = "payment_id_seq")
 public class Payment {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
+    @Column(name = "created_date", nullable = false)
+    private Date date;
+
     @Column(name = "payment", nullable = false)
     private BigDecimal payment;
 
-    @Column(name = "date", nullable = false)
-    private Date date;
+    @ManyToOne
+    @JoinColumn(name = "invoice_id")
+    private Invoice invoice;
 }

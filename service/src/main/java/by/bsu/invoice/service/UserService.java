@@ -5,7 +5,7 @@ import by.bsu.invoice.entity.User;
 import java.util.List;
 
 public interface UserService extends Service<User> {
-    long getIdByEmail(String email);
+    Integer getIdByEmail(String email);
 
     User getByEmail(String email);
 
