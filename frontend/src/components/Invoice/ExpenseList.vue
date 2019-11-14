@@ -33,6 +33,7 @@
     import Bus from '../../bus';
     import { mapState } from 'vuex';
     import ExpenseApi from '../../api/ExpenseApi';
+    import hardcodedExpense from '../../assets/db/expense'
 
     export default {
         components: {
@@ -88,7 +89,8 @@
             addBlock () {
                 ExpenseApi.store(this.id, 0, this.config)
                     .then(response => {
-                        this.expenseList.push(response.data);
+                        this.expenseList.push(hardcodedExpense);
+                        // this.expenseList.push(response.data);
                     })
                     .catch(err => {
                         this.$toasted.error('Whoops. Something went wrong: ' + err);

@@ -126,7 +126,7 @@
                 this.currencyCoefficient = this.currencies[this.currencyTo] / this.currencies[this.currencyFrom];
             },
             getCurrencyRate () {
-                fetch('https://api.fixer.io/latest')
+                fetch('http://data.fixer.io/api/latest?access_key=5702be60249da0124bb6c9ed200830b3&format=1')
                     .then(response => {
                         return response.json();
                     })
@@ -140,7 +140,7 @@
                     });
             },
             getCurrencyRateByDate () {
-                fetch('https://api.fixer.io/' + this.selectedDate)
+                fetch(`http://data.fixer.io/api/${this.selectedDate}?access_key=5702be60249da0124bb6c9ed200830b3&format=1`)
                     .then(response => {
                         return response.json();
                     })

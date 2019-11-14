@@ -27,7 +27,7 @@
     import InvoiceListElem from './InvoiceListElem.vue';
     import InvoiceApi from '../../api/InvoiceApi';
     import { mapState } from 'vuex';
-    import hardcodedInvoices from '../../assets/db/invoices';
+    import hardcodedInvoices from '../../assets/db/invoice';
 
     export default {
         components: {
@@ -60,7 +60,7 @@
                     })
             },
             fetchData () {
-                InvoiceApi.showInvoiceList(this.config)
+                InvoiceApi.showAll(this.config)
                     .then(response => {
                         this.$store.commit('setInvoiceList', hardcodedInvoices);
                         // this.$store.commit('setInvoiceList', response.data.data);

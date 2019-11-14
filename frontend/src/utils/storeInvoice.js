@@ -18,7 +18,8 @@ export default {
             InvoiceApi.store(this.invoice, this.config)
                 .then(response => {
                     // this.updateVuex(response.data.data);
-                    this.$router.push({ name: 'invoice:show', params: { invoiceId: response.data.data.id } });
+                    // this.$router.push({ name: 'invoice:show', params: { invoiceId: response.data.data.id } });
+                    this.$router.push({ name: 'invoice:show', params: { invoiceId: "100" } });
                 })
                 .catch(err => {
                     this.$toasted.error('Whoops. Something went wrong: ' + err);

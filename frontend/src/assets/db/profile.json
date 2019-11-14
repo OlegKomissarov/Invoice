@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "fields": [
+    {
+      "field": "name",
+      "value": "Oleg",
+      "isAllowToChange": true,
+      "id": 2323
+    },
+    {
+      "field": "email",
+      "value": "oleg@gmail.com",
+      "isAllowToChange": false,
+      "id": 2324
+    }
+  ],
+  "userId": 1
+}

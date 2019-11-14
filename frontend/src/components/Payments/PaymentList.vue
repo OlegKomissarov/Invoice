@@ -28,6 +28,7 @@
     import PaymentApi from '../../api/PaymentApi';
     import { mapState } from 'vuex';
     import moment from 'moment';
+    import hardcodedPayment from '../../assets/db/payment'
 
     export default {
         components: {
@@ -83,7 +84,8 @@
             addBlock () {
                 PaymentApi.store(this.id, 0, this.config)
                     .then(response => {
-                        this.paymentList.push(response.data);
+                        this.paymentList.push(hardcodedPayment);
+                        // this.paymentList.push(response.data);
                     })
                     .catch(err => {
                         this.$toasted.error('Whoops. Something went wrong: ' + err);

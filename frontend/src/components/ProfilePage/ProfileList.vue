@@ -4,7 +4,7 @@
         <span class="profile__header">Profile</span>
 
         <profile-list-item v-if="isLoaded"
-                v-for="(profileAttribute, index) in profileList.fields"
+                v-for="(profileAttribute, index) in profile.fields"
                 :key="profileAttribute.id"
                 :profileAttribute="profileAttribute"
                 @delete="deleteField(index)"
@@ -32,6 +32,7 @@
     import ProfileApi from '../../api/ProfileApi';
     import { mapState } from 'vuex';
     import storeProfile from '../../utils/storeProfile'
+    import hardcodedProfiles from '../../assets/db/profile'
 
     export default {
         mixins: [storeProfile],
@@ -41,12 +42,13 @@
         data () {
             return {
                 isLoaded: false,
-                profileList: []
+                profile: {}
             }
         },
         computed: {
             isAllowToAddField () {
-                return this.profileList.fields[this.profileList.fields.length - 1] && !this.profileList.fields[this.profileList.fields.length - 1].field;
+                return this.profile.fields[this.profile.fields.length - 1]
+                    && !this.profile.fields[this.profile.fields.length - 1].field;
             },
             config () {
                 return { headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
@@ -58,10 +60,11 @@
         methods: {
             fetchData () {
                 this.isLoaded = false;
-                ProfileApi.show(this.config)
+                ProfileApi.showAll(this.config)
                     .then(response => {
-                        this.profileList = response.data;
-                        this.profileList.fields = JSON.parse(response.data.fields);
+                        this.profile = hardcodedProfiles;
+                        // this.profile = response.data;
+                        // this.profile.fields = JSON.parse(response.data.fields);
                         this.isLoaded = true;
                     })
                     .catch(err => {
@@ -70,7 +73,7 @@
                     })
             },
             updateData () {
-                let requestData = { fields: JSON.stringify(this.profileList.fields) };
+                let requestData = { fields: JSON.stringify(this.profile.fields) };
                 ProfileApi.update(requestData, this.config)
                     .catch(err => {
                         this.$toasted.error('Whoops. Something went wrong: ' + err);
@@ -84,10 +87,10 @@
                         isAllowToChange: true,
                         id: guid()
                     };
-                this.profileList.fields.push(emptyProfileItem);
+                this.profile.fields.push(emptyProfileItem);
             },
             deleteField (index) {
-                this.profileList.fields.splice(index, 1);
+                this.profile.fields.splice(index, 1);
                 this.updateData();
             }
         }

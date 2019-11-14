@@ -33,7 +33,7 @@
     import InvoiceApi from '../api/InvoiceApi';
     import { mapState } from 'vuex';
     import storeInvoice from '../utils/storeInvoice';
-    import hardcodedInvoices from '../assets/db/invoices';
+    import hardcodedInvoices from '../assets/db/invoice';
 
     export default {
         props: {

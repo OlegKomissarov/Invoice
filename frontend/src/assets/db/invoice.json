@@ -2,7 +2,7 @@
   {
     "id": 1,
     "date": "12.12.2018",
-    "name": "Selling socks for People",
+    "name": "socks for People",
     "number": 1,
     "userId": 1,
     "expenses": [
@@ -59,7 +59,7 @@
       },
       {
         "id": 5,
-        "description": "instagram",
+        "description": "youtube",
         "count": 1,
         "price": 15000,
         "invoice_id": 2
