@@ -1,11 +1,11 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomePage from '../components/HomePage.vue'
-import AllInvoices from '../components/InvoicesListPage/InvoicesListPage.vue'
-import NotFound from '../errors/NotFound.vue'
-import Profile from '../components/ProfilePage/ProfilePage.vue'
-import Login from '../components/Login.vue'
-import Signup from '../components/Signup.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import HomePage from '../components/HomePage.vue';
+import AllInvoices from '../components/InvoicesListPage/InvoicesListPage.vue';
+import NotFound from '../errors/NotFound.vue';
+import Profile from '../components/ProfilePage/ProfilePage.vue';
+import Login from '../components/Login.vue';
+import Signup from '../components/Signup.vue';
 
 Vue.use(VueRouter);
 

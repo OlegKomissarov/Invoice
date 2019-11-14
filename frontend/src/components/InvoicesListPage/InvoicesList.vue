@@ -45,7 +45,7 @@
             }),
             config () {
                 return {
-                    // headers: {Authorization: 'Bearer ' + localStorage.getItem('userToken'), SecFetchSite: 'none'}
+                    headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken'), SecFetchSite: 'none' }
                 };
             }
         },
@@ -57,7 +57,7 @@
                 InvoiceApi.deleteData(id, this.config)
                     .catch(err => {
                         this.$toasted.error('Whoops. Something went wrong: ' + err);
-                    })
+                    });
             },
             fetchData () {
                 InvoiceApi.showAll(this.config)
@@ -68,12 +68,12 @@
                     })
                     .catch(err => {
                         this.$toasted.error('Whoops. Something went wrong: ' + err);
-                    })
+                    });
             },
             deleteInvoice (index) {
                 this.deleteData(this.invoiceList[index].id);
                 this.invoiceList.splice(index, 1);
             }
         }
-    }
+    };
 </script>

@@ -41,7 +41,7 @@
         mixins: [storeProfile],
         computed: {
             config () {
-                return {headers: {Authorization: 'Bearer ' + localStorage.getItem('userToken')}};
+                return { headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
             }
         },
         methods: {
@@ -63,5 +63,5 @@
                     });
             }
         }
-    }
+    };
 </script>

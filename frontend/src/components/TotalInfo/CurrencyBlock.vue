@@ -30,5 +30,5 @@
                 this.$emit('currencyChange', {value: event.target.value, source: this.source})
             }
         }
-    }
+    };
 </script>

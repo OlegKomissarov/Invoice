@@ -1,7 +1,7 @@
-const path = require('path')
-const webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
 
-require('dotenv').config()
+require('dotenv').config();
 
 let configs = module.exports = {
     node: {
@@ -44,21 +44,21 @@ let configs = module.exports = {
             {
                 test: /\.scss$/,
                 use: [{
-                    loader: "style-loader" // creates style nodes from JS strings
+                    loader: 'style-loader' // creates style nodes from JS strings
                 }, {
-                    loader: "css-loader" // translates CSS into CommonJS
+                    loader: 'css-loader' // translates CSS into CommonJS
                 }, {
-                    loader: "sass-loader" // compiles Sass to CSS
+                    loader: 'sass-loader' // compiles Sass to CSS
                 }]
             },
             {
                 test: /\.sass$/,
                 use: [{
-                    loader: "style-loader" // creates style nodes from JS strings
+                    loader: 'style-loader' // creates style nodes from JS strings
                 }, {
-                    loader: "css-loader" // translates CSS into CommonJS
+                    loader: 'css-loader' // translates CSS into CommonJS
                 }, {
-                    loader: "sass-loader" // compiles Sass to CSS
+                    loader: 'sass-loader' // compiles Sass to CSS
                 }]
             }
         ]
@@ -74,7 +74,7 @@ let configs = module.exports = {
         noInfo: true,
         overlay: true,
         proxy: {
-            "/api": {
+            '/api': {
                 target: process.env.API_URL
             },
             changeOrigin: true
@@ -106,5 +106,5 @@ if (process.env.NODE_ENV === 'production') {
         new webpack.LoaderOptionsPlugin({
             minimize: true
         })
-    ])
+    ]);
 }

@@ -48,9 +48,7 @@
 <script>
     import ExpenseList from './ExpenseList.vue';
     import InvoiceApi from '../../api/InvoiceApi';
-    import guid from '../../utils/guid';
     import { mapState } from 'vuex';
-    import moment from 'moment';
 
     export default {
         components: {
@@ -71,8 +69,8 @@
                 InvoiceApi.update(this.id, invoice, this.config)
                     .catch(err => {
                         this.$toasted.error('Whoops. Something went wrong: ' + err);
-                    })
+                    });
             }
         }
-    }
+    };
 </script>

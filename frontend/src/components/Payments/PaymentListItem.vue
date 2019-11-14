@@ -45,5 +45,5 @@
                  this.$emit('update');
              }
          }
-     }
+     };
  </script>

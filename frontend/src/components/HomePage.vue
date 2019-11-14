@@ -31,7 +31,6 @@
     import PaymentList from './Payments/PaymentList.vue';
     import TotalInfo from './TotalInfo/TotalInfo.vue';
     import InvoiceApi from '../api/InvoiceApi';
-    import { mapState } from 'vuex';
     import storeInvoice from '../utils/storeInvoice';
     import hardcodedInvoices from '../assets/db/invoice';
 
@@ -47,7 +46,7 @@
         },
         computed: {
             config () {
-                return {headers: {Authorization: 'Bearer ' + localStorage.getItem('userToken')}};
+                return { headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
             }
         },
         mounted () {
@@ -65,7 +64,7 @@
                     .catch(err => {
                         this.$toasted.error('Whoops. Something went wrong: ' + err);
                         this.isLoaded = true;
-                    })
+                    });
             }
         },
         components: {
@@ -74,5 +73,5 @@
             PaymentList,
             TotalInfo
         }
-    }
+    };
 </script>

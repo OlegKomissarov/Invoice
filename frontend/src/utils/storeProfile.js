@@ -20,4 +20,4 @@ export default {
             this.$store.commit('setProfileId', profileId);
         }
     }
-}
+};

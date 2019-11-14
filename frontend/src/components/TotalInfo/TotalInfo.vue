@@ -51,7 +51,6 @@
     import Bus from '../../bus';
     import TotalInfoTable from './TotalInfoTable.vue';
     import CurrencyBlock from './CurrencyBlock.vue';
-    import axios from 'axios';
 
     export default {
         components: {
@@ -106,10 +105,16 @@
             dateHandler () {
                 let currentDate = new Date();
                 let startDate = 2000;
-                if (this.selectedDate && +this.selectedDate.slice(0, 4) >= startDate && +this.selectedDate.slice(0, 4) <= currentDate.getFullYear()) {
+                if (
+                    this.selectedDate && +this.selectedDate.slice(0, 4) >= startDate
+                    && +this.selectedDate.slice(0, 4) <= currentDate.getFullYear()
+                ) {
                     this.getCurrencyRateByDate();
                 }
-                if (+this.selectedDate.slice(0, 4) < startDate || +this.selectedDate.slice(0, 4) > currentDate.getFullYear()) {
+                if (
+                    +this.selectedDate.slice(0, 4) < startDate
+                    || +this.selectedDate.slice(0, 4) > currentDate.getFullYear()
+                ) {
                     this.$toasted.error('No information about this date');
                 }
             },
@@ -147,10 +152,9 @@
                     .then(object => {
                         this.currencies = Object.assign(object.rates, {'EUR': 1});
                         this.countCoefficient();
-
                     })
-                    .catch(error => {
-                        switch (error.status) {
+                    .catch(err => {
+                        switch (err.status) {
                             case 404:
                                 this.$toasted.error('Data no found');
                                 break;
@@ -169,5 +173,5 @@
                 [this.currencyFrom, this.currencyTo] = [this.currencyTo, this.currencyFrom]
             }
         }
-    }
+    };
 </script>

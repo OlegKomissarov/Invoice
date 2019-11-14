@@ -28,5 +28,5 @@
             paymentTotal: Number,
             totalToPay: Number
         }
-    }
+    };
 </script>

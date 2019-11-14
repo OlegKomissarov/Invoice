@@ -43,5 +43,5 @@
         components: {
             InvoicesList
         }
-    }
+    };
 </script>

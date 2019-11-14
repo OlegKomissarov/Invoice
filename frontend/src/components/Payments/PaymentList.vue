@@ -23,12 +23,10 @@
 
 <script>
     import PaymentListItem from './PaymentListItem.vue';
-    import guid from '../../utils/guid';
     import Bus from '../../bus';
     import PaymentApi from '../../api/PaymentApi';
     import { mapState } from 'vuex';
-    import moment from 'moment';
-    import hardcodedPayment from '../../assets/db/payment'
+    import hardcodedPayment from '../../assets/db/payment';
 
     export default {
         components: {
@@ -41,13 +39,14 @@
                 invoice: state => state.invoice
             }),
             isAllowToAddPayment () {
-                return this.paymentList[this.paymentList.length - 1] && !this.paymentList[this.paymentList.length - 1].payment;
+                return this.paymentList[this.paymentList.length - 1]
+                    && !this.paymentList[this.paymentList.length - 1].payment;
             },
             total () {
                 return +this.paymentList.reduce((sum, payment) => sum + +payment.payment, 0);
             },
             config () {
-                return {headers: {Authorization: 'Bearer ' + localStorage.getItem('userToken')}};
+                return { headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
             }
         },
         watch: {
@@ -72,7 +71,7 @@
                 PaymentApi.update(payment.id, paymentData, this.config)
                     .catch(err => {
                         this.$toasted.error('Whoops. Something went wrong: ' + err);
-                    })
+                    });
             },
             deletePayment(index, id) {
                 PaymentApi.deleteData(id, this.config)
@@ -92,6 +91,5 @@
                     });
             }
         }
-    }
-
+    };
 </script>

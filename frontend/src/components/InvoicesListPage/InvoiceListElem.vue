@@ -14,8 +14,6 @@
 </template>
 
 <script>
-    import { mapState } from 'vuex';
-
     export default {
         props:{
             invoice: Object
@@ -39,5 +37,5 @@
                 return this.total - this.paid;
             }
         }
-    }
+    };
 </script>

@@ -35,5 +35,5 @@
         props: {
             profileAttribute: Object
         }
-    }
+    };
 </script>

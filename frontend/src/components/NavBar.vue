@@ -1,19 +1,6 @@
 <template>
     <div class="navigation-buttons">
         <div class="navigation-buttons-left">
-            <!--<select class="navigation-buttons__elem"-->
-                    <!--@change="$router.push({ name: 'invoices:show', params: {invoiceId: id} })"-->
-            <!--&gt;-->
-                <!--<option disabled selected style='display:none;'>Your invoices</option>-->
-                <!--<option value="Invoice_1">Invoice_1</option>-->
-                <!--<option value="Invoice_2">Invoice_2</option>-->
-            <!--</select>-->
-            <!--<router-link v-if="id"-->
-                         <!--class="link navigation-buttons__elem"-->
-                         <!--:to="{ name: 'invoice:show', params: {invoiceId: id } }"-->
-                         <!--&gt;-->
-                <!--Back to last invoice-->
-            <!--</router-link>-->
             <router-link class="link navigation-buttons__elem"
                     :to="{ name: 'all-invoices' }"
             >
@@ -49,5 +36,5 @@
                 id: state => state.invoice.id
             })
         }
-    }
+    };
 </script>

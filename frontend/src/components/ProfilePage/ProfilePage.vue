@@ -17,6 +17,8 @@
 
 <script>
     import ProfileList from './ProfileList.vue';
+    import axios from 'axios';
+
     export default {
         components: {
             ProfileList
@@ -39,5 +41,5 @@
                 this.$router.push({ name: 'login' });
             }
         }
-    }
+    };
 </script>

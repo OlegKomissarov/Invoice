@@ -33,7 +33,7 @@
         computed: {
             config () {
                 return {
-                    headers: {Authorization: 'Bearer ' + localStorage.getItem('userToken')}
+                    headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') }
                 };
             }
         },
@@ -49,5 +49,5 @@
                     });
             }
         }
-    }
+    };
 </script>

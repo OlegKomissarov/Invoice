@@ -27,12 +27,9 @@
 <script>
     import ProfileListItem from './ProfileListItem.vue';
     import guid from '../../utils/guid';
-    import Bus from '../../bus';
-    import axios from 'axios';
     import ProfileApi from '../../api/ProfileApi';
-    import { mapState } from 'vuex';
-    import storeProfile from '../../utils/storeProfile'
-    import hardcodedProfiles from '../../assets/db/profile'
+    import storeProfile from '../../utils/storeProfile';
+    import hardcodedProfiles from '../../assets/db/profile';
 
     export default {
         mixins: [storeProfile],
@@ -70,14 +67,14 @@
                     .catch(err => {
                         this.$toasted.error('Whoops. Something went wrong: ' + err);
                         this.isLoaded = true;
-                    })
+                    });
             },
             updateData () {
                 let requestData = { fields: JSON.stringify(this.profile.fields) };
                 ProfileApi.update(requestData, this.config)
                     .catch(err => {
                         this.$toasted.error('Whoops. Something went wrong: ' + err);
-                    })
+                    });
             },
             addBlock () {
                 let emptyProfileItem =
@@ -94,6 +91,5 @@
                 this.updateData();
             }
         }
-    }
-
+    };
 </script>

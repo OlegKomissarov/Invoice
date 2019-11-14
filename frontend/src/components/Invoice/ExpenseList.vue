@@ -33,7 +33,7 @@
     import Bus from '../../bus';
     import { mapState } from 'vuex';
     import ExpenseApi from '../../api/ExpenseApi';
-    import hardcodedExpense from '../../assets/db/expense'
+    import hardcodedExpense from '../../assets/db/expense';
 
     export default {
         components: {
@@ -46,13 +46,14 @@
                 invoice: state => state.invoice
             }),
             isAllowToAddExpense () {
-                return this.expenseList[this.expenseList.length - 1] && !this.expenseList[this.expenseList.length - 1].description;
+                return this.expenseList[this.expenseList.length - 1]
+                    && !this.expenseList[this.expenseList.length - 1].description;
             },
             total () {
                 return this.expenseList.reduce((sum, expense) => sum + expense.price * expense.count, 0);
             },
             config () {
-                return {headers: {Authorization: 'Bearer ' + localStorage.getItem('userToken')}};
+                return { headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
             }
         },
         watch: {
@@ -77,7 +78,7 @@
                 ExpenseApi.update(expense.id, expenseData, this.config)
                     .catch(err => {
                         this.$toasted.error('Whoops. Something went wrong: ' + err);
-                    })
+                    });
             },
             deleteExpense(index, id) {
                 ExpenseApi.deleteData(id, this.config)

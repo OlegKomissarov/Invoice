@@ -39,9 +39,6 @@
 </template>
 
 <script>
-
-    import { mapState } from 'vuex';
-
     export default {
         props: {
             expense: Object
@@ -63,5 +60,5 @@
                 this.$emit('update');
             }
         }
-    }
+    };
 </script>
