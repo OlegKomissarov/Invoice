@@ -7,7 +7,7 @@
                    v-model="expense.description"
                    ref="description"
                    @blur="sendEmit('description')"
-            >
+            />
             <div class="expense__right">
                 <input class="expense__elem expense__elem_margin"
                        type="number"
@@ -16,7 +16,7 @@
                        v-model="expense.count"
                        ref="count"
                        @blur="sendEmit('count')"
-                >
+                />
                 <input class="expense__elem expense__elem_margin"
                        type="number"
                        placeholder="price"
@@ -24,16 +24,14 @@
                        v-model="expense.price"
                        ref="price"
                        @blur="sendEmit('price')"
-                >
+                />
                 <span class="expense__elem">{{ total }}</span>
             </div>
         </div>
         <div class="remove-button"
              @click="$emit('delete')"
         >
-            <i class="fa fa-times"
-               aria-hidden="true"
-            ></i>
+            X
         </div>
     </div>
 </template>

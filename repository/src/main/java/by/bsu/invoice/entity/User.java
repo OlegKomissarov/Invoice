@@ -3,7 +3,6 @@ package by.bsu.invoice.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 
 @EqualsAndHashCode
 @ToString
@@ -23,11 +22,8 @@ public class User {
     @Column(name = "email", nullable = false, length = 224)
     private String email;
 
-    @Column(name = "password", nullable = false, length = 32)
+    @Column(name = "password", nullable = false, length = 224)
     private String password;
-
-    @Column(name = "current_balance", nullable = false)
-    private BigDecimal currentBalance;
 
     @Column(name = "username", nullable = false, length = 100)
     private String username;

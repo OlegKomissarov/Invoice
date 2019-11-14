@@ -1,13 +1,18 @@
 import InvoiceApi from '../api/InvoiceApi';
+import moment from 'moment';
+import { mapState } from 'vuex';
 
 const DEFAULT_INVOICE = {
-    user_id: 0
+    number: 0,
+    date: moment().format('YYYY-MM-DD'),
+    title: ''
 };
 
 export default {
     computed: {
         config () {
-            return { headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
+            return { contentType: 'application/json;charset=UTF-8' };
+            // return { headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
         },
         invoice () {
             return Object.assign({}, DEFAULT_INVOICE);
@@ -17,16 +22,23 @@ export default {
         storeNewInvoice () {
             InvoiceApi.store(this.invoice, this.config)
                 .then(response => {
-                    this.updateVuex(response.data.data);
-                    this.$router.push({ name: 'invoice:show', params: { invoiceId: response.data.data.id } });
-                    // this.$router.push({ name: 'invoice:show', params: { invoiceId: '100' } });
+                    this.goToNewInvoice();
                 })
                 .catch(err => {
                     this.$toasted.error('Whoops. Something went wrong: ' + err);
                 });
         },
-        updateVuex (invoice) {
-            this.$store.commit('setInvoice', invoice);
+        goToNewInvoice() {
+            InvoiceApi.showAll(this.config)
+                .then(response => {
+                    this.$router.push({
+                        name: 'invoice:show',
+                        params: { invoiceId: response.data[response.data.length - 1].id }
+                    });
+                })
+                .catch(err => {
+                    this.$toasted.error('Whoops. Something went wrong: ' + err);
+                });
         }
     }
 };

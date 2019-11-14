@@ -48,7 +48,7 @@
                     && !this.profile.fields[this.profile.fields.length - 1].field;
             },
             config () {
-                return { headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
+                // return { headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
             }
         },
         mounted () {
@@ -57,7 +57,7 @@
         methods: {
             fetchData () {
                 this.isLoaded = false;
-                ProfileApi.showAll(this.config)
+                ProfileApi.show(this.config)
                     .then(response => {
                         this.profile = hardcodedProfiles;
                         // this.profile = response.data;

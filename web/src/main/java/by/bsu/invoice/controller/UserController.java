@@ -1,13 +1,11 @@
 package by.bsu.invoice.controller;
 
-import by.bsu.invoice.entity.Invoice;
 import by.bsu.invoice.entity.User;
 import by.bsu.invoice.service.UserService;
 import by.bsu.invoice.util.SessionUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,11 +35,12 @@ public class UserController {
             @RequestParam("name") String name,
             @RequestParam("phone") String phone
     ) {
-        if (sessionUser == null) {
+        // Recomment when implement login
+//        if (sessionUser == null) {
             userService.create(email, password, name, phone);
             return new ResponseEntity<>(HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.CONFLICT);
+//        }
+//        return new ResponseEntity<>(HttpStatus.CONFLICT);
     }
 
     @PostMapping("/login")

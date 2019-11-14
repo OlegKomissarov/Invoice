@@ -4,9 +4,10 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.List;
 
-@EqualsAndHashCode
-@ToString
+@EqualsAndHashCode(exclude = {"expenses", "payments"})
+@ToString(exclude = {"expenses", "payments"})
 @Getter
 @Setter
 @NoArgsConstructor
@@ -36,11 +37,27 @@ public class Invoice {
     @Column(name = "is_archival", nullable = false)
     private Integer isArchival;
 
+    @OneToMany(mappedBy = "invoice")
+    private List<Expense> expenses;
+
+    @OneToMany(mappedBy = "invoice")
+    private List<Payment> payments;
+
     public Invoice(Date date, String title, Integer number, User user, Integer isArchival) {
         this.date = date;
         this.title = title;
         this.number = number;
         this.user = user;
         this.isArchival = isArchival;
+    }
+
+    public Invoice(Date date, String title, Integer number) {
+        this.date = date;
+        this.title = title;
+        this.number = number;
+    }
+
+    public Invoice(Integer id) {
+        this.id = id;
     }
 }

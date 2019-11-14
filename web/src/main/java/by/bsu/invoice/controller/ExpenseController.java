@@ -1,18 +1,13 @@
 package by.bsu.invoice.controller;
 
 import by.bsu.invoice.entity.Expense;
+import by.bsu.invoice.entity.Invoice;
 import by.bsu.invoice.service.ExpenseService;
 import by.bsu.invoice.util.SessionUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
-
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/expense")
@@ -26,8 +21,26 @@ public class ExpenseController {
         this.sessionUser = sessionUser;
     }
 
-    @GetMapping("/{invoiceId}")
-    public ResponseEntity<List<Expense>> getByInvoiceId(@PathVariable("invoiceId") Integer invoiceId) {
-        return new ResponseEntity<>(expenseService.getByInvoiceId(sessionUser.getId()), HttpStatus.OK);
+    @PostMapping()
+    public ResponseEntity<Expense> create(@RequestBody Invoice invoice) {
+        expenseService.create(invoice);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Expense> update(@PathVariable Integer id, @RequestBody Expense expense) {
+        expenseService.update(
+                id,
+                expense.getDescription(),
+                expense.getCount(),
+                expense.getPrice()
+        );
+        return new ResponseEntity<>(expense, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Expense> delete(@PathVariable Integer id) {
+        expenseService.delete(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

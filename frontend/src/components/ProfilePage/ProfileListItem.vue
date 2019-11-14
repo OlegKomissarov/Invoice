@@ -8,14 +8,12 @@
                    ref="field"
                    :disabled="!profileAttribute.isAllowToChange"
                    @blur="$emit('update')"
-            >
+            />
             <div class="remove-button"
                  v-show="profileAttribute.isAllowToChange"
                  @click="$emit('delete')"
             >
-                <i class="fa fa-times"
-                   aria-hidden="true"
-                ></i>
+                X
             </div>
         </div>
 
@@ -25,7 +23,7 @@
                @click="$refs.value.select()"
                ref="value"
                @blur="$emit('update')"
-        >
+        />
 
     </div>
 </template>

@@ -40,7 +40,7 @@ public class UserServiceImpl extends AbstractService<User, UserRepository> imple
     }
 
     public void create (String email, String password, String name, String phone) {
-        if (repository.getIdByEmail(email) == -1) {
+        if (repository.getIdByEmail(email) == null) {
             User user = new User(email, name, phone);
             user.setPassword(passwordEncoder.encode(password));
             repository.save(user);

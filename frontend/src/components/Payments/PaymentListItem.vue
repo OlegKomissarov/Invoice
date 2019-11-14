@@ -8,7 +8,7 @@
                     v-model="payment.date"
                     ref="date"
                     @blur="sendEmit('date')"
-             >
+             />
              <input class="payment__elem payment__elem_right"
                     type="number"
                     placeholder="pay"
@@ -16,22 +16,25 @@
                     v-model="payment.payment"
                     ref="pay"
                     @blur="sendEmit('pay')"
-             >
+             />
          </div>
          <div class="remove-button"
               @click="$emit('delete')"
          >
-             <i class="fa fa-times"
-                aria-hidden="true"
-             ></i>
+             X
          </div>
      </div>
  </template>
 
  <script>
+     import moment from 'moment';
+
      export default {
          props: {
              payment: Object
+         },
+         mounted() {
+             this.payment.date = moment(this.payment.date).format('YYYY-MM-DD');
          },
          methods: {
              sendEmit (type) {

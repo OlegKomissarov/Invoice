@@ -6,12 +6,12 @@
             <div class="invoice-header-container-main">
                 <div class="invoice-header-container-column">
                     <input class="invoice-header-container-main__input invoice__header"
-                           placeholder="invoice name"
+                           placeholder="invoice title"
                            @click="$refs.name.select()"
-                           v-model="invoice.name"
+                           v-model="invoice.title"
                            ref="name"
                            @blur="updateData"
-                    >
+                    />
                     <!--<span>{{ $store.state.company.value }}</span>-->
                 </div>
                 <div class="invoice-header-container-row">
@@ -23,7 +23,7 @@
                            v-model="invoice.number"
                            ref="number"
                            @blur="updateData"
-                    >
+                    />
                     <input class="invoice-header-container-main__input invoice__date"
                            type="text"
                            placeholder="date"
@@ -31,11 +31,11 @@
                            v-model="invoice.date"
                            ref="date"
                            @blur="updateData"
-                    >
+                    />
                 </div>
             </div>
 
-            <expense-list></expense-list>
+            <expense-list :fetchInvoice="fetchInvoice"></expense-list>
 
             <div class="send-button-container">
                 <div class="send-button-container__send-button">Send to Email</div>
@@ -54,18 +54,21 @@
         components: {
             ExpenseList
         },
+        props: {
+            fetchInvoice: Function
+        },
         computed: {
             ...mapState({
                 id: state => state.invoice.id,
                 invoice: state => state.invoice
             }),
             config () {
-                return { invoice: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
+                // return { invoice: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
             }
         },
         methods: {
             updateData () {
-                let invoice = {name: this.invoice.name, date: this.invoice.date, number: this.invoice.number};
+                let invoice = { title: this.invoice.title, date: this.invoice.date, number: this.invoice.number };
                 InvoiceApi.update(this.id, invoice, this.config)
                     .catch(err => {
                         this.$toasted.error('Whoops. Something went wrong: ' + err);

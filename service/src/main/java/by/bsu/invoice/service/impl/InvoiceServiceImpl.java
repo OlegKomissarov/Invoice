@@ -34,6 +34,15 @@ public class InvoiceServiceImpl extends AbstractService<Invoice, InvoiceReposito
     }
 
     @Override
+    public void update(Integer id, Date createdDate, String title, Integer invoiceNumber) {
+        Invoice invoice = getById(id);
+        invoice.setDate(createdDate);
+        invoice.setTitle(title);
+        invoice.setNumber(invoiceNumber);
+        repository.save(invoice);
+    }
+
+    @Override
     public void delete(Integer id) {
         repository.delete(id);
     }

@@ -2,8 +2,7 @@ CREATE TABLE IF NOT EXISTS invoice.user
 (
   id                SERIAL PRIMARY KEY,
   email             character   varying(224)            NOT NULL UNIQUE,
-  password          character   varying(32)             NOT NULL,
-  current_balance   numeric                             NOT NULL,
+  password          character   varying(224)            NOT NULL,
   username          character   varying(100)            NOT NULL,
   phone             character   varying(17)             NOT NULL
 );

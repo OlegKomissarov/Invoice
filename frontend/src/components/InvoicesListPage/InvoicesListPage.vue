@@ -13,7 +13,7 @@
             <div class="collection-up-panel-left">
                 <span>Sort by:</span>
                 <select class="collection-up-panel-left__select">
-                    <option value="">Name</option>
+                    <option value="">Title</option>
                     <option value="">Number</option>
                 </select>
             </div>

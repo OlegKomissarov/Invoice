@@ -13,6 +13,6 @@ public interface InvoiceRepository extends Repository<Invoice> {
     @Query(value = "UPDATE invoice.invoice SET is_archival=1 WHERE id=?", nativeQuery = true)
     void delete(Integer id);
 
-    @Query(value = "SELECT * from invoice.invoice where user_id=?", nativeQuery = true)
+    @Query(value = "SELECT * from invoice.invoice where user_id=? and is_archival=0", nativeQuery = true)
     List<Invoice> getByUserId(Integer userId);
 }

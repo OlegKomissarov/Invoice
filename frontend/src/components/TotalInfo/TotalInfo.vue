@@ -16,10 +16,9 @@
         ></currency-block>
 
         <div class="reverse-currency">
-            <i class="fa fa-exchange"
-               aria-hidden="true"
-               @click="reverseCurrencies"
-            ></i>
+            <span class="add-button" @click="reverseCurrencies">
+              ↑↓
+            </span>
         </div>
 
         <currency-block source="to"
@@ -34,7 +33,7 @@
             <input type="date"
                    v-model="selectedDate"
                    @blur="dateHandler"
-            >
+            />
         </div>
 
         <total-info-table

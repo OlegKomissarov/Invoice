@@ -14,9 +14,7 @@
                 <div class="remove-button"
                      @click="deleteInvoice(index)"
                 >
-                    <i class="fa fa-times"
-                       aria-hidden="true"
-                    ></i>
+                    X
                 </div>
             </div>
         </div>
@@ -27,7 +25,6 @@
     import InvoiceListElem from './InvoiceListElem.vue';
     import InvoiceApi from '../../api/InvoiceApi';
     import { mapState } from 'vuex';
-    import hardcodedInvoices from '../../assets/db/invoice';
 
     export default {
         components: {
@@ -62,7 +59,6 @@
             fetchData () {
                 InvoiceApi.showAll(this.config)
                     .then(response => {
-                        // this.$store.commit('setInvoiceList', hardcodedInvoices);
                         this.$store.commit('setInvoiceList', response.data);
                         this.isLoaded = true;
                     })

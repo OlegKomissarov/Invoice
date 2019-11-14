@@ -10,7 +10,7 @@ public interface InvoiceService extends Service<Invoice> {
 
     void create(Date createdDate, String title, Integer invoiceNumber, Integer userId, Integer isArchival);
 
-    void delete(Integer id);
+    void update(Integer id, Date createdDate, String title, Integer invoiceNumber);
 
-//    List<Invoice> getByTitleAndUserId(String title, Integer userId);
+    void delete(Integer id);
 }

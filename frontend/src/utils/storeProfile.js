@@ -3,12 +3,12 @@ import ProfileApi from '../api/ProfileApi';
 export default {
     computed: {
         config () {
-            return { headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
+            // return { headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
         }
     },
     methods: {
-        storeNewProfile () {
-            ProfileApi.store(this.config)
+        storeNewProfile (data) {
+            ProfileApi.store(data, this.config)
                 .then(() => {
                     this.$router.push({ name: 'profile:show' });
                 })

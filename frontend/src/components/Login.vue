@@ -4,12 +4,12 @@
             <input type="text"
                    placeholder="email"
                 v-model="data.email"
-            >
+            />
         </form>
         <input type="password"
                placeholder="password"
                v-model="data.password"
-        >
+        />
         <span class="link navigation-buttons__elem navigation-buttons__elem_profile"
               @click="submit()"
         >

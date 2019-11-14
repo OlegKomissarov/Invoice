@@ -2,14 +2,14 @@ import axios from 'axios';
 
 class ProfileApi {
     // GET: /api/profile
-    static showAll (config) {
+    static show (config) {
         return new Promise((resolve)=>{resolve();});
         // return axios.get(`/api/profile`, config)
     }
     // POST: /api/profile
-    static store (config) {
+    static store (data, config) {
         return new Promise((resolve)=>{resolve();});
-        // return axios.post(`/api/profile`, 0, config)
+        // return axios.post('/api/profile', data, config);
     }
     // PUT: /api/profile
     static update (data, config) {

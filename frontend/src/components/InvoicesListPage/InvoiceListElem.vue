@@ -1,7 +1,7 @@
 <template>
     <div class="collection-item">
         <div class="collection-item-left">
-            <span class="collection-item__header">{{ invoice.name }}</span>
+            <span class="collection-item__header">{{ invoice.title }}</span>
             <span class="collection-item__sub-header">{{ invoice.number }}</span>
             <span class="collection-item__sub-header">{{ invoice.date }}</span>
         </div>

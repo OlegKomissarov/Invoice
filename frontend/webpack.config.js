@@ -3,6 +3,8 @@ const webpack = require('webpack');
 
 require('dotenv').config();
 
+console.log(path.resolve(__dirname, './dist'));
+console.log(__dirname);
 let configs = module.exports = {
     node: {
         fs: 'empty'
@@ -26,7 +28,6 @@ let configs = module.exports = {
                 loader: 'vue-loader',
                 options: {
                     loaders: {}
-                    // other vue-loader options go here
                 }
             },
             {

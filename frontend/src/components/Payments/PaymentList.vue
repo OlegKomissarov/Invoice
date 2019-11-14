@@ -26,11 +26,13 @@
     import Bus from '../../bus';
     import PaymentApi from '../../api/PaymentApi';
     import { mapState } from 'vuex';
-    import hardcodedPayment from '../../assets/db/payment';
 
     export default {
         components: {
             PaymentListItem
+        },
+        props: {
+            fetchInvoice: Function
         },
         computed: {
             ...mapState({
@@ -46,7 +48,7 @@
                 return +this.paymentList.reduce((sum, payment) => sum + +payment.payment, 0);
             },
             config () {
-                return { headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
+                // return { headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
             }
         },
         watch: {
@@ -81,10 +83,11 @@
                 this.paymentList.splice(index, 1);
             },
             addBlock () {
-                PaymentApi.store(this.id, 0, this.config)
+                PaymentApi.store({ id: this.id }, this.config)
                     .then(response => {
-                        this.paymentList.push(hardcodedPayment);
                         // this.paymentList.push(response.data);
+                        // I need to reload invoice because JPA cannot simply return created instance after saving in DB.
+                        this.fetchInvoice();
                     })
                     .catch(err => {
                         this.$toasted.error('Whoops. Something went wrong: ' + err);

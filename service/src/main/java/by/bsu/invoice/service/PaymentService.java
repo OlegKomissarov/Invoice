@@ -1,11 +1,15 @@
 package by.bsu.invoice.service;
 
+import by.bsu.invoice.entity.Invoice;
 import by.bsu.invoice.entity.Payment;
 
-import java.util.List;
+import java.math.BigDecimal;
+import java.util.Date;
 
 public interface PaymentService extends Service<Payment> {
-    void create(Integer invoiceId, Integer productId, Integer productAmount);
+    void create(Invoice invoice);
 
-    List<Payment> getByInvoiceId(Integer invoiceId);
+    void update(Integer id, Date date, BigDecimal payment);
+
+    void delete(Integer id);
 }

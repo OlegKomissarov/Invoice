@@ -4,18 +4,18 @@
             <input type="text"
                    placeholder="name"
                    v-model="data.name"
-            >
+            />
         </form>
         <form action="" autocomplete="off">
             <input type="text"
                    placeholder="email"
                    v-model="data.email"
-            >
+            />
         </form>
         <input type="password"
                placeholder="password"
                v-model="data.password"
-        >
+        />
         <span class="link navigation-buttons__elem navigation-buttons__elem_profile"
               @click="submit()"
         >
@@ -41,7 +41,7 @@
         mixins: [storeProfile],
         computed: {
             config () {
-                return { headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
+                // return { headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
             }
         },
         methods: {

@@ -5,15 +5,8 @@
         <main-header></main-header>
 
         <template v-if="isLoaded">
-            <div class="new-doc new-doc_invoice">
-                <span class="link"
-                   @click="storeNewInvoice"
-                >
-                    New document
-                </span>
-            </div>
-            <invoice-document></invoice-document>
-            <payment-list></payment-list>
+            <invoice-document :fetchInvoice="fetchData"></invoice-document>
+            <payment-list :fetchInvoice="fetchData"></payment-list>
         </template>
         <div v-else>
             is loading
@@ -31,14 +24,11 @@
     import PaymentList from './Payments/PaymentList.vue';
     import TotalInfo from './TotalInfo/TotalInfo.vue';
     import InvoiceApi from '../api/InvoiceApi';
-    import storeInvoice from '../utils/storeInvoice';
-    import hardcodedInvoices from '../assets/db/invoice';
 
     export default {
         props: {
             invoiceId: [String, Number]
         },
-        mixins: [storeInvoice],
         data () {
             return {
                 isLoaded: false
@@ -46,19 +36,27 @@
         },
         computed: {
             config () {
-                return { headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
+                // return { headers: { Authorization: 'Bearer ' + localStorage.getItem('userToken') } };
             }
         },
-        mounted () {
-            this.fetchData();
+        watch: {
+            invoiceId: {
+                handler () {
+                    // I need to reload invoice because JPA cannot simply return created instance after saving in DB.
+                    this.fetchData();
+                },
+                immediate: true
+            }
         },
+        // mounted () {
+        //     this.fetchData();
+        // },
         methods: {
             fetchData () {
                 this.isLoaded = false;
                 InvoiceApi.show(this.invoiceId, this.config)
                     .then(response => {
-                        // this.$store.commit('setInvoice', hardcodedInvoices[0]);
-                        this.$store.commit('setInvoice', response.data.data);
+                        this.$store.commit('setInvoice', response.data);
                         this.isLoaded = true;
                     })
                     .catch(err => {
